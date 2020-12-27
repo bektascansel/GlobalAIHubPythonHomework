@@ -1,0 +1,55 @@
+kullanıcıİsmi=input("lütfen isminizi giriniz:")
+print("oyuna hoşgeldin {} \n İlk olarak sana oyunu anlattarak başlıyorum.Oyunumuz bir sans oyunudur.Sen oyunu başlattığın zaman rastgele bir sayi üretilecek eger ilk üretilen sayılar 2,3,12 ise bu oyunu kaybettiniz, 7 ve 11 ise kazandınız anlamına gelmektedir.Eger ilk sayı bunlardan biri degil ise tekrardan rastgele sayı üretilerek ilk sayı elde edilmeye çalışılıyor fakat sonraki sayı tekrardan yedi gelir ise oyunu kaybediyorsun. bol sans".format(kullanıcıİsmi))
+
+başla=int(input("lutfen oyuna başlamak için 1 oyundan çıkmak için 2 tuşuna basınız"))
+
+if başla==1:
+  print("oyun başlıyor\n\n")
+  import random
+  ilksayi=random.randint(1,10)
+  print("ilk üretilen sayi {}\n".format(ilksayi))
+
+  if ilksayi==7 or ilksayi==11:
+    print("ilk üretilen sayınız {} geldiginden dolayı oyunu ilk atışta kazandınız\n".format(ilksayi))
+    print("oyun scorunuz 100")
+  elif ilksayi==2 or ilksayi==3 or ilksayi==11:
+    print("ilk üretilen sayiniz {} geldiginden dolayı oyunu ilk atışta kaybettiniz\n".format(ilksayi))
+    print("oyun scorunuz 0")
+  
+  else:
+    score=100
+    print("oyun devam ediyor ve yeni sayilar üretiliyor.\n")
+    print("her üretilen sayi ile birlikte scorunuz -10 düşecektir.Elinizde bulunan 100 puan bitene kadar oyunda kalacaksınız\n")
+    #import random
+    üretilensayi=random.randint(1,10)
+    score=90
+    print("üretilen sayi {}".format(üretilensayi))
+    if üretilensayi==7:
+      print("kaybettiniz\n")
+      print("oyun scorunuz 0")
+     
+    else:
+      
+        while (üretilensayi != ilksayi):
+          if score==0:
+           print("oyun puanınız bitti\n oyun scorunuz 0\n oyunu kaybettiniz\n")
+           break
+          print("sayi üretilmeye devam ediyor\n")
+          import random
+          üretilensayi=random.randint(1,10)
+          score-=10
+          print("üretilen sayi {}".format(üretilensayi))
+          if üretilensayi==7:
+           print("kaybettiniz\n")
+           print("oyun scorunuz 0")
+           break;
+      
+    
+        if üretilensayi!=7:
+          print("üretilen {} sayisi ile kazandınız".format(üretilensayi))
+          print("oyun scorunuz {}".format(score))
+ 
+
+   
+else:
+ print("oyun bitti")
