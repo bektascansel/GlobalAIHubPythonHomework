@@ -1,0 +1,109 @@
+ogrenciisim="CANSEL BEKTAS"
+
+i=3
+for x in range(3):
+ isim=(input("ismininizi giriniz: \n")).upper()
+ 
+ if isim==ogrenciisim: 
+   x=0
+   break
+
+ else:
+   i-=1
+   print("kullanıcı bilgilerini yanlış girdiniz lütfen tekrar deneyiniz\n")
+   print("{} deneme hakkınız kaldı\n".format(i))
+   x=1
+
+
+if x==1:
+   print("Sisteminiz geçici süre bloke edilmiştir.lütfen daha sonra tekrar deneyiniz\n")
+
+else:
+  print("sisteme hoşgeldin {}".format(isim))
+  print("lütfen 5 adet ders giriniz:\n")
+  dersler=[]
+  for x in range(5):
+    dersler.append(input("{} dersin ismini giriniz:\n".format(x+1)))
+  
+  sayi=int(input("kaç ders alacaksınız: \n"))
+
+  if sayi<3 or sayi>5:
+    ok=False
+    while(ok !=True):
+      sayi=int(input("geçersiz sayıda ders seçimi yaptınız lütfen tekrardan giriniz."))
+      ok=(sayi>=3) and (sayi<=5)
+  
+  if sayi>=3 and sayi<=5:
+     print("lütfen alacagınız dersleri giriniz:")
+     ders=[]
+     for x in range(0,sayi):
+       i=input()
+       for x in range(0,5):
+          if i==dersler[x]:
+            ders.append(i)
+            dersler[x]="dersSeçildi"
+            test=0
+            break
+          else:
+            test=1
+            continue
+        
+
+       if test==1:
+          
+          while test!=0:
+             print("geçersiz ders girdiniz. lütfen listede olan derslerden seçim  yapınız")
+             print("{}".format(dersler[0:5]))
+             i=input()
+             for x in range(0,5):
+               if i==dersler[x]:
+                 ders.append(i)
+                 dersler[x]="dersSeçildi"
+                 test=0
+                 break
+              
+               else:
+                 test=1
+  print("seçtiğiniz dersler şunları\n")          
+  print(ders[0:sayi])
+  secilenders=input("notlarını gireceginiz dersi giriniz")
+  for x in range(0,sayi):
+    if secilenders==ders[x]:
+      dene=1
+      break
+      
+    else:
+     dene=0
+  
+  if dene==0:
+       while(dene!=1):
+          print("geçersiz ders girdiniz:\n")
+          secilenders=input("notlarını gireceginiz dersi giriniz:\n")
+          for x in range(0,sayi):
+            if secilenders==ders[x]:
+              dene=1
+              break
+      
+            else:
+             dene=0
+  
+  vize=int(input("{} dersin vize notunu giriniz: \n".format(secilenders)))
+  final=int(input("{} dersin final notunu giriniz: \n".format(secilenders)))
+  proje=int(input("{} dersin proje notunu giriniz: \n".format(secilenders)))
+      
+  sınav={'vize': vize, 'final': final, 'proje': proje}
+  print(sınav)
+
+  ortalama=((vize*30)/100)+((final*50)/100)+((proje*20)/100)
+
+  if ortalama>90:
+     print("notunuz {}\nAA ile geçtiniz".format(ortalama))
+  elif 70<ortalama<=90:
+     print("notunuz {}\nBB ile geçtiniz".format(ortalama))
+  elif 50<ortalama<=70:
+     print("notunuz {}\nCC ile geçtiniz".format(ortalama))
+  elif 30<ortalama<=50:
+     print("notunuz {}\nDD ile geçtiniz".format(ortalama))
+  elif ortalama<=30:
+     print("notunuz {}\nFF ile kaldınız\n{} dersten başarısız oldunuz tekrardan dersi alınız.".format(ortalama,secilenders))
+
