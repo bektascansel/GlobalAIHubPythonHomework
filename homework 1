@@ -1,0 +1,13 @@
+dizi=[]
+
+dizi.append(input("deger giriniz:"))
+dizi.append(input("deger giriniz:"))
+dizi.append(input("deger giriniz:"))
+dizi.append(input("deger giriniz:"))
+dizi.append(input("deger giriniz:"))
+print(dizi)
+'''Kullanıcıdan rastgele deger alındıgı için kullanıcının ne türde deger girilecegi bilinmediğinden tür degişimi yapmadım bundan dolayı type hep str çıktı.diğer türlü kullanıcıdan belli türde deger alsaydım türleri yazdırmamın hiçbir mantığı olmayacaktı :D'''
+print(type(dizi[0]),type(dizi[1]),type(dizi[2]),type(dizi[3]),type(dizi[4]))
+print("{}".format(dizi))
+dizi.reverse()
+print(f"{dizi}")
