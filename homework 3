@@ -1,0 +1,18 @@
+'''isim=input("lutfen isminizi giriniz: \n")
+soyisim=input("lütfen soyisminizi giriniz: \n")
+yaş=int(input("lütfen yaşınızı giriniz: \n"))
+dogumyılı=int(input("lütfen dogum yılınızı  giriniz: \n"))'''
+
+birey=[]
+birey.append(input("lutfen isminizi giriniz: \n"))
+birey.append(input("lütfen soyisminizi giriniz: \n"))
+birey.append(int(input("lütfen yaşınızı giriniz: \n")))
+birey.append(int(input("lütfen dogum yılınızı  giriniz: \n"))
+)
+
+print("bireyin adı: {}\nbireyin soyismi: {}\nbireyin yaşı: {}\nbireyin dogum yılı: {}\n".format(birey[0],birey[1],birey[2],birey[3]))
+
+if birey[2]<=18:
+  print("dışarı çıkamazsın çünkü çok tehlikeli\n")
+else:
+  print("sokağa çıkabilirsiniz.\n")
